@@ -1,7 +1,10 @@
 /**
  * Created by Ulrik on 23-05-2017.
  */
-package businesslogic;
+package businesslogic.surveymodule;
+
+
+import datalayer.DBCore;
 
 public class Answer {
 
@@ -13,7 +16,7 @@ public class Answer {
     public Answer(int id, String text) {
         this.id = id;
         this.text = text;
-        System.out.println("Answer object - created");
+        if (DBCore.debugDB)System.out.println("Answer object - created");
     }
 
 

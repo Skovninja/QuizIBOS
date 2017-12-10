@@ -3,7 +3,7 @@
  */
 package datalayer;
 
-import businesslogic.Answer;
+import businesslogic.surveymodule.Answer;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -31,6 +31,7 @@ public class DBHandler {
         ArrayList <Answer> answerList = null;
 
         try {
+
             //region -- trylle --
             //STEP 2: Register JDBC driver
             System.out.println("Registering Driver!");
@@ -250,6 +251,7 @@ public class DBHandler {
         }//end try
         System.out.println("Goodbye!");
     }//End addUser
+
 
 
 }// End Of Class

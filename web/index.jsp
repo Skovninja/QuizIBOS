@@ -1,4 +1,4 @@
-<%@ page import="businesslogic.DirectFromIndexTest" %><%--
+<%@ page import="businesslogic.testmodule.QuizTestClass" %><%--
   Created by IntelliJ IDEA.
   User: Ulrik
   Date: 16-05-2017
@@ -9,19 +9,28 @@
 <html>
 <head>
     <title>Quiz - IBOS</title>
+    <script>
+        //Using setTimeout to execute a function after 5 seconds.
+        setTimeout(function () {
+            //Redirect with JavaScript
+            window.location.href= '/test';
+        }, 2000);
+    </script>
 </head>
 <body>
 
 <h1>QuizTest</h1>
 <a href="quizlogin.jsp">Login her!</a>
 
-<br><% // Direct access to run a class from index
-    DirectFromIndexTest outTest = new DirectFromIndexTest();
-    //out.print(outTest.displayTestInfo);
-    outTest.testRun();
+<%
+    /*the quick way using "="
+    The string called this way is a static one
+    this is to avoid the construction og a new object
+     */
 %>
-<%//the quick way %>
-<%=outTest.displayTestInfo%>
+<%=QuizTestClass.testStringStatic%>
+
+
 
 
 </body>

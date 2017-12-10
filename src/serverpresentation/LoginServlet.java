@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 /**
  * Created by Ulrik on 16-05-2017.
  */
-@WebServlet(name = "LoginServlet")
+@WebServlet(name = "LoginServlet", urlPatterns = "/logintest")
 public class LoginServlet extends HttpServlet {
 
 

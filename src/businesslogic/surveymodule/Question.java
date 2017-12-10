@@ -1,7 +1,9 @@
 /**
  * Created by Ulrik on 23-05-2017.
  */
-package businesslogic;
+package businesslogic.surveymodule;
+import datalayer.DBQuestion;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +19,7 @@ public class Question {
 
     //endregion
 
-    // Constructor
+    //region -- Constructors --
     public Question(int id, String title, String qText, ArrayList answers) {
         this.id = id;
         this.title = title;
@@ -25,6 +27,11 @@ public class Question {
         this.answers = answers;
     }
 
+    public Question(int id) {
+        this.id = id;
+        answers = (ArrayList) new DBQuestion().connectTo(id);
+    }
+    //endregion
 
     //region -- Getters --
 
@@ -46,5 +53,15 @@ public class Question {
 
     //endregion
 
+
+    @Override
+    public String toString() {
+        return "Question {" +
+                "id=" + id +
+                ", <br>title='" + title + '\'' +
+                ", qText='" + qText + '\'' +
+                ", <br>answers=" + answers +
+                '}';
+    }
 
 }// End of Class
