@@ -97,7 +97,6 @@ public class DBQuestion extends DBCore {
 
         ResultSet rs = prepS.executeQuery();
 
-        System.out.println("TEEEST"+rs+"     TEEEST");
         //STEP 5: Extract data from result set
 
         answerList = new ArrayList<>();
@@ -110,7 +109,8 @@ public class DBQuestion extends DBCore {
             answerList.add(new Answer(rsID, rsName));
 
         }
-        System.out.println(answerList.toString());
+        //System.out.println(answerList.toString());
+
         //endregion
 
     }

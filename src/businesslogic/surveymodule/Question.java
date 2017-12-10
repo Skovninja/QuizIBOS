@@ -2,6 +2,7 @@
  * Created by Ulrik on 23-05-2017.
  */
 package businesslogic.surveymodule;
+import datalayer.DBOption;
 import datalayer.DBQuestion;
 
 import java.util.ArrayList;
@@ -10,12 +11,12 @@ import java.util.List;
 public class Question {
 
     //region -- Field --
-    int id = -22;
-    String title = "Tidøl";
-    String qText = "R du z3mq!";
+    private int id = -22;
+    private String title = "Tidøl";
+    private String qText = "R du z3mq!";
 
     //An array list of Answers
-    ArrayList answers = null;
+    private ArrayList answers = null;
 
     //endregion
 
@@ -29,7 +30,8 @@ public class Question {
 
     public Question(int id) {
         this.id = id;
-        answers = (ArrayList) new DBQuestion().connectTo(id);
+        //answers = (ArrayList) new DBQuestion().connectTo(id);
+        answers = (ArrayList) new DBOption().getArrayListFrom(id);
     }
     //endregion
 

@@ -21,8 +21,18 @@ public class TestServlet extends HttpServlet {
 
         //sbTest.append("<h2>Hey</h2>");
 
+
         sbTest.append("<h2>Tests omhandlende Quiz modulet</h2>");
+        //creating object to test
         QuizTestClass qTC = new QuizTestClass();
+
+        qTC.testDBOption();
+        sbTest.append(
+                "<h1> WOLA" +
+                qTC.testDBOption()
+                + "</h1>"
+        );
+
 
         //Test of the creation of a Quiz object
         sbTest.append("<h3>Quiz object TEST</h3>");
