@@ -16,7 +16,7 @@ public class Question {
     private String qText = "R du z3mq!";
 
     //An array list of Answers
-    private ArrayList answers = null;
+    ArrayList answers = null;
 
     //endregion
 
@@ -30,8 +30,11 @@ public class Question {
 
     public Question(int id) {
         this.id = id;
+
+        //old DBQuestion replaced with DBOption
         //answers = (ArrayList) new DBQuestion().connectTo(id);
         answers = (ArrayList) new DBOption().getArrayListFrom(id);
+        System.out.println(answers.toString());
     }
     //endregion
 

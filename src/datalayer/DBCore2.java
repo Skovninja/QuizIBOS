@@ -38,7 +38,7 @@ public abstract class DBCore2 {
         //Closing resources
         closeResources();
 
-        return new ArrayList();
+        return  myAL;
     }
 
 
