@@ -3,39 +3,46 @@
  */
 package businesslogic.surveymodule;
 import datalayer.DBOption;
-import datalayer.DBQuestion;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Question {
+public class Question implements InterfaceQuestionType{
 
     //region -- Field --
     private int id = -22;
     private String title = "Tidøl";
-    private String qText = "R du z3mq!";
+    private String qText = "Question has not got text!";
 
-    //An array list of Answers
-    ArrayList answers = null;
+    //An array list of options
+    ArrayList options = null;
 
     //endregion
 
     //region -- Constructors --
-    public Question(int id, String title, String qText, ArrayList answers) {
+    public Question(int id, String title, String qText, ArrayList options) {
         this.id = id;
         this.title = title;
         this.qText = qText;
-        this.answers = answers;
+        this.options = this.options;
     }
 
+    //This constructor is primarily used to test DB connection
     public Question(int id) {
         this.id = id;
 
-        //old DBQuestion replaced with DBOption
-        //answers = (ArrayList) new DBQuestion().connectTo(id);
-        answers = (ArrayList) new DBOption().getArrayListFrom(id);
-        System.out.println(answers.toString());
+        //old DBQuestionOld replaced with DBOption
+        //options = (ArrayList) new DBQuestionOld().connectTo(id);
+        options = new DBOption().getArrayListFrom(id);
     }
+
+    public Question(int id, String title, String qText) {
+        this.id = id;
+        this.title = title;
+        this.qText = qText;
+        System.out.println("Hey from Question Constructor with ID :" + id);
+    }
+
     //endregion
 
     //region -- Getters --
@@ -52,21 +59,30 @@ public class Question {
         return qText;
     }
 
-    public List getAnswers() {
-        return answers;
+    public List getOptions() {
+        return options;
     }
 
     //endregion
 
 
+    //Method used to fill up the ArrayList with option Objects
+    @Override
+    public void fillFromDB() {
+        options = new DBOption().getArrayListFrom(id);
+    }
+
     @Override
     public String toString() {
-        return "Question {" +
-                "id=" + id +
-                ", <br>title='" + title + '\'' +
-                ", qText='" + qText + '\'' +
-                ", <br>answers=" + answers +
-                '}';
+        StringBuilder tS = new StringBuilder();
+
+        tS.append("<h5>" + title + " (Spg-" + id + ")</h5>");
+        tS.append("<p>" + qText + "<br>" + options + "</p>");
+
+
+        return tS.toString();
+
+
     }
 
 }// End of Class

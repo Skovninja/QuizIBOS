@@ -1,5 +1,13 @@
 package datalayer;
 
+
+/**
+ * This Class is no longer in use and has been improved
+ * in version 2 called DBCore2
+ * It it is primarily saved to see the difference between the two
+ */
+
+
 public class DBCore {
 
     //region -- Field --

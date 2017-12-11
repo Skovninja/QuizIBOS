@@ -6,7 +6,7 @@ package businesslogic.surveymodule;
 
 import datalayer.DBCore;
 
-public class Answer {
+public class Answer implements InterfaceOption {
 
     private int id = -55;
     private String text = "Lallesvar";

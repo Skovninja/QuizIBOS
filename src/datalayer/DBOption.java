@@ -26,7 +26,6 @@ public class DBOption extends DBCore2{
                 int rsID = rs.getInt("answer_id");
                 String rsName = rs.getString("answer_text");
 
-
                 myAL.add(new Answer(rsID, rsName));
 
             }

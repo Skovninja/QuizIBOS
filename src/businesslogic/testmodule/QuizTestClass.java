@@ -13,6 +13,15 @@ public class QuizTestClass {
     private StringBuilder gFXTest = new StringBuilder("Muføl");
 
 
+    //Test of Quiz object creation
+    public Quiz quizTest() {
+        Quiz q = new Quiz(1);
+        //Fillls up a Question in the ArrayList with its corresponding Option objects
+        //q.getQuestions().get(1).fillFromDB();
+        //q.getQuestions().get(0).fillFromDB();
+        return q;
+    }
+
     //Test of DBOption
     public String testDBOption() {
         DBOption dBO = new DBOption();
@@ -42,10 +51,7 @@ public class QuizTestClass {
         return new Question(3);
     }
 
-    //Test of Quiz object creation
-    public Quiz quizTest() {
-        return new Quiz(1);
-    }
+
 
 
 }//End of Class

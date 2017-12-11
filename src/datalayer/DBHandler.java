@@ -8,6 +8,12 @@ import businesslogic.surveymodule.Answer;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * This classs whas the starting point for DB connection
+ * it still contains User Log-inand User creation
+ * it was inspired from
+ */
+
 public class DBHandler {
 
         //region -- Field --

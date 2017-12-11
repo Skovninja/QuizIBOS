@@ -10,29 +10,33 @@ public abstract class DBCore2 {
     public static final boolean debugDB = false;
 
     // JDBC driver name and database URL
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3006/ibosdata";
+    protected static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    protected static final String DB_URL = "jdbc:mysql://localhost:3006/ibosdata";
 
     //  Database credentials
     // HiddenDBInfo is GIt ignored to prevent public display
-    static final String USER = HiddenDBInfo.hiddenUSER;
-    static final String PASS = HiddenDBInfo.hiddenPASS;
+    protected static final String USER = HiddenDBInfo.hiddenUSER;
+    protected static final String PASS = HiddenDBInfo.hiddenPASS;
 
 
-    ResultSet rs = null;
-    Connection conn = null;
-    PreparedStatement prepS = null;
-    String sql = null;
+    protected ResultSet rs = null;
+    private Connection conn = null;
+    private PreparedStatement prepS = null;
+    protected String sql = null;
 
-    ArrayList<Object> myAL;
+    protected ArrayList<Object> myAL;
 //endregion
+
 
     public ArrayList getArrayListFrom(int questionID) {
 
+        //Connection to DB to get a result set from an id
         connectAndReturnResultSet(questionID);
 
         myAL = new ArrayList<Object>();
-        //method to convert result set to array list
+
+        //Abstract method to convert result set to array list
+        //method are to be defined in sub classes
         rStoArrayList();
 
         //Closing resources

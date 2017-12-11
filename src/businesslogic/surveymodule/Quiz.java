@@ -1,5 +1,7 @@
 package businesslogic.surveymodule;
 
+import datalayer.DBQuestion;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,32 +11,47 @@ import java.util.List;
 public class Quiz {
 
     //region --field --
-    int id = -11;
-    String title = "Kwees Tidøl";
-    String preAmp = "Wældgåmøn til...";
+    private int id = -11;
+    private String title = "Kwees Tidøl";
+    private String preAmp = "Wældgåmøn til...";
 
     //An array list of Questions
-    ArrayList<Question> questions;
+    private ArrayList<InterfaceQuestionType> questions;
 
     //endregion
 
     //region -- constructors --
+
     public Quiz(int id) {
         this.id = id;
-        questions = new ArrayList();
-        questions.add(new Question(3));
-        questions.add(new Question(2));
+
+        DBQuestion dBQ = new DBQuestion();
+        questions = dBQ.getArrayListFrom(id);
+
+        //Filling up the Questions in the ArrayList with their corresponding option objects
+        for (InterfaceQuestionType iqt: questions) {
+            iqt.fillFromDB();
+
+        }
+
     }
     //endregion
 
 
+    public ArrayList<InterfaceQuestionType> getQuestions() {
+        return questions;
+    }
+
     @Override
     public String toString() {
-        return "Quiz{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", preAmp='" + preAmp + '\'' +
-                ", <br>questions=" + questions +
-                '}';
+        StringBuilder tS = new StringBuilder();
+
+        tS.append("<h4>" + title + " (Qz-" + id + ")</h4>");
+        tS.append("<p>" + preAmp + "<br>Array of Questions ->" + questions + "</p>");
+
+
+        return tS.toString();
+
     }//End of toString
+
 } //End of Class

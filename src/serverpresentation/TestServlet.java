@@ -26,12 +26,16 @@ public class TestServlet extends HttpServlet {
         //creating object to test
         QuizTestClass qTC = new QuizTestClass();
 
-        qTC.testDBOption();
-        sbTest.append(
-                "<h1> WOLA" +
-                qTC.testDBOption()
-                + "</h1>"
-        );
+
+        //region -- Test of Survey Module --
+
+        //Test of the creation of an ArrayList of Answers
+        //qTC.testDBOption();
+        //sbTest.append(
+        //        "<h3> Option ArrayList from DB - TEST<br>" +
+        //        qTC.testDBOption()
+        //        + "</h3>"
+        //);
 
 
         //Test of the creation of a Quiz object
@@ -39,8 +43,10 @@ public class TestServlet extends HttpServlet {
         sbTest.append(qTC.quizTest());
 
         //Test of the creation of a Question object
-        sbTest.append("<h3>Question object TEST</h3>");
-        sbTest.append(qTC.questionTest());
+        //sbTest.append("<h3>Question object TEST</h3>");
+        //sbTest.append(qTC.questionTest());
+
+        //endregion
 
 
         //this part sends the StringBuilder to the HTML page
