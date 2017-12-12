@@ -31,8 +31,10 @@ public class Quiz {
         //Filling up the Questions in the ArrayList with their corresponding option objects
         for (InterfaceQuestionType iqt: questions) {
             iqt.fillFromDB();
-
         }
+
+        //adds the final "page" after the question chain
+        questions.add(new PostQuestion());
 
     }
     //endregion

@@ -14,16 +14,28 @@ import java.io.PrintWriter;
 
 @WebServlet(name = "QuizServlet", urlPatterns = "/quiz")
 public class QuizServlet extends HttpServlet {
+
+    int qTestNumber = 0;
+    Quiz qz = new Quiz(1);
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        StringBuilder sbTest = new StringBuilder("<h1>Quiz - TEST </h1>");
+        qTestNumber++;
+        sbTest.append(qTestNumber);
+        InterfaceQuestionType qs = qz.getQuestions().get(qTestNumber);
+        sbTest.append(qs.getHTML());
+
+        PrintWriter out = response.getWriter();
+        out.print(sbTest);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        qTestNumber = 1;
         StringBuilder sbTest = new StringBuilder("<h1>Quiz - TEST </h1>");
-        Quiz qz = new Quiz(1);
 
-        InterfaceQuestionType qs = qz.getQuestions().get(1);
+        InterfaceQuestionType qs = qz.getQuestions().get(qTestNumber);
 
         sbTest.append(qs.getHTML());
 
