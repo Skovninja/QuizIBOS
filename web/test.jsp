@@ -14,10 +14,9 @@
 <body>
 <h1>Test Page</h1>
 
-<br><% // Direct access to run a function from index %>
-
+<br>// Direct access to run a function from index
 <%//=QuizTestClass.testRun(2)%>
-<%=QuizTestClass.testRun(3)%>
+<%//=QuizTestClass.testStringStatic%>
 
 </body>
 </html>

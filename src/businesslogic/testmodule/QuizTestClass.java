@@ -16,6 +16,7 @@ public class QuizTestClass {
     //Test of Quiz object creation
     public Quiz quizTest() {
         Quiz q = new Quiz(1);
+        //Moved into Quiz's construtor
         //Fillls up a Question in the ArrayList with its corresponding Option objects
         //q.getQuestions().get(1).fillFromDB();
         //q.getQuestions().get(0).fillFromDB();

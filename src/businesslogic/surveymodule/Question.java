@@ -13,9 +13,10 @@ public class Question implements InterfaceQuestionType{
     private int id = -22;
     private String title = "Tidøl";
     private String qText = "Question has not got text!";
+    private String  sbHTML = "";
 
     //An array list of options
-    ArrayList options = null;
+    ArrayList<InterfaceOption> options = null;
 
     //endregion
 
@@ -46,6 +47,20 @@ public class Question implements InterfaceQuestionType{
     //endregion
 
     //region -- Getters --
+
+    @Override
+    public String getHTML() {
+
+        sbHTML += "<form action='/quiz' method='post'>\n";
+        for (InterfaceOption o: options) {
+            sbHTML += "<input name = 'radeoselection' type = 'radio'>" + o.getText() + "<br>\n";
+        }
+        sbHTML += "<input type='submit' value='Næste'>\n";
+        sbHTML += "</form>";
+        System.out.println(sbHTML);
+        return sbHTML;
+    }
+
 
     public int getId() {
         return id;

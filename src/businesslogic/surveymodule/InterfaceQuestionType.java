@@ -11,6 +11,8 @@ public interface InterfaceQuestionType {
     String getqText();
     List getOptions();
 
+    String getHTML();
+
     void fillFromDB();
 
     //endregion
