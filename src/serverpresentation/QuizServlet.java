@@ -1,7 +1,6 @@
 package serverpresentation;
 
 import businesslogic.surveymodule.InterfaceQuestionType;
-import businesslogic.surveymodule.Question;
 import businesslogic.surveymodule.Quiz;
 
 import javax.servlet.ServletException;
@@ -16,32 +15,32 @@ import java.io.PrintWriter;
 public class QuizServlet extends HttpServlet {
 
     int qTestNumber = 0;
-    Quiz qz = new Quiz(1);
+    Quiz quiz = new Quiz(1);
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        StringBuilder sbTest = new StringBuilder("<h1>Quiz - TEST </h1>");
-        qTestNumber++;
-        sbTest.append(qTestNumber);
-        InterfaceQuestionType qs = qz.getQuestions().get(qTestNumber);
-        sbTest.append(qs.getHTML());
+        //StringBuilder sbTest = new StringBuilder("<h1>Quiz - TEST (post method)</h1>");
+        //qTestNumber++;
+        //sbTest.append(qTestNumber);
+        //InterfaceQuestionType qs = quiz.getQuizParts().get(qTestNumber);
+        //sbTest.append(qs.getHTML());
+
+        //sbTest.append(quiz.getHTML());
+
+        //System.out.println(quiz.getHTML());
+
 
         PrintWriter out = response.getWriter();
-        out.print(sbTest);
+        quiz.nextPart();
+        out.print(quiz.getHTML());
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        qTestNumber = 1;
-        StringBuilder sbTest = new StringBuilder("<h1>Quiz - TEST </h1>");
-
-        InterfaceQuestionType qs = qz.getQuestions().get(qTestNumber);
-
-        sbTest.append(qs.getHTML());
-
 
         PrintWriter out = response.getWriter();
-        out.print(sbTest);
+        out.print(quiz.getHTML());
 
     }
 }

@@ -18,8 +18,8 @@ public class QuizTestClass {
         Quiz q = new Quiz(1);
         //Moved into Quiz's construtor
         //Fillls up a Question in the ArrayList with its corresponding Option objects
-        //q.getQuestions().get(1).fillFromDB();
-        //q.getQuestions().get(0).fillFromDB();
+        //q.getQuizParts().get(1).fillFromDB();
+        //q.getQuizParts().get(0).fillFromDB();
         return q;
     }
 
