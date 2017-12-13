@@ -38,8 +38,6 @@ public class DBOption extends DBCore2{
 
         }
 
-        myAL.add(new Answer(-1, "Empty"));
-
 
     }
 
