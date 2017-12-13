@@ -27,8 +27,15 @@ public class LoginServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         if (login.isValid(eName, ePassword)) {
-            //out.print("<h1>hej "+eName+"</h1>");
-            response.sendRedirect("/welcome.jsp");
+
+            //set an Attribute to forward
+            request.setAttribute("username", eName);
+
+            //forwarding of attributes that can be used in .jsp's
+            request.getRequestDispatcher("/welcome.jsp").forward(request, response);
+
+            //response does not forward attributes to be used
+            //response.sendRedirect("/welcome.jsp");
 
         } else {
             out.print("LoginServlet forkert\n" + eName + " " + ePassword);
@@ -36,18 +43,14 @@ public class LoginServlet extends HttpServlet {
         }
 
 
-
-        //forwards parameters, has error if URL is reentered
-        request.setAttribute("username", eName);
-        //request.getRequestDispatcher("/welcome.jsp").forward(request, response);
     }
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        // gør at der kan skrives til WEB side
+        //
         PrintWriter out = response.getWriter();
-        out.print("LoginServlet servlet");
+        out.print("LoginServlet servlet<br /> Du er ikke logget ind");
 
         String eName = request.getParameter("testname");
         System.out.println("URL get " + eName + " works!");

@@ -15,8 +15,8 @@
 <h1>Login</h1>
 
 <form action="/login" method="post">
-    <input type="text" name="enteredusername"><br>
-    <input type="password" name="enteredpassword"><br>
+    <input type="text" name="enteredusername", value="testuser"/><br>
+    <input type="password" name="enteredpassword", value="fdsa4321"/><br>
 
     <% //min checkLoginInDB
         String test = "<input type=\"radio\">";

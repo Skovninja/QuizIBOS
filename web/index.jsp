@@ -19,12 +19,9 @@
 </head>
 <body>
 
-<h1>QuizTest</h1>
+<h1>Quiz IBOS</h1>
 <a href="quizlogin.jsp">Login her!</a><br><br>
-<a href="/quiz?quizid=0">Gå til Quiz</a><br>
-<a href="/quiz?quizid=1">Gå til Quiz</a><br>
-<a href="/quiz?quizid=2">Gå til Quiz</a><br>
-<a href="/quiz?quizid=3">Gå til Quiz</a><br>
+
 
 
 
