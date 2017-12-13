@@ -46,6 +46,7 @@ public class Quiz {
         return quizParts;
     }
 
+    //Changes the pointer variable to the next object in quizParts
     public void nextPart() {
         if (quizParts.size()-1 > currentQuizPart) {
             System.out.println("IF STATEMENT");

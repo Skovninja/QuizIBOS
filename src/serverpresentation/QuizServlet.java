@@ -14,21 +14,9 @@ import java.io.PrintWriter;
 @WebServlet(name = "QuizServlet", urlPatterns = "/quiz")
 public class QuizServlet extends HttpServlet {
 
-    int qTestNumber = 0;
-    Quiz quiz = new Quiz(1);
+    Quiz quiz;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        //StringBuilder sbTest = new StringBuilder("<h1>Quiz - TEST (post method)</h1>");
-        //qTestNumber++;
-        //sbTest.append(qTestNumber);
-        //InterfaceQuestionType qs = quiz.getQuizParts().get(qTestNumber);
-        //sbTest.append(qs.getHTML());
-
-        //sbTest.append(quiz.getHTML());
-
-        //System.out.println(quiz.getHTML());
-
 
         PrintWriter out = response.getWriter();
         quiz.nextPart();
@@ -38,9 +26,13 @@ public class QuizServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String quizID = request.getParameter("quizid");
+        int quizIntID = Integer.parseInt(quizID);
+        quiz = new Quiz(quizIntID);
 
         PrintWriter out = response.getWriter();
         out.print(quiz.getHTML());
 
+        out.print(quizID);
     }
 }

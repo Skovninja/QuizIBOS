@@ -14,13 +14,22 @@
         setTimeout(function () {
             //Redirect with JavaScript
             window.location.href= '/test';
-        }, 2000);
+        }, 10000);
     </script>
 </head>
 <body>
 
 <h1>QuizTest</h1>
-<a href="quizlogin.jsp">Login her!</a>
+<a href="quizlogin.jsp">Login her!</a><br><br>
+<a href="/quiz?quizid=0">Gå til Quiz</a><br>
+<a href="/quiz?quizid=1">Gå til Quiz</a><br>
+<a href="/quiz?quizid=2">Gå til Quiz</a><br>
+<a href="/quiz?quizid=3">Gå til Quiz</a><br>
+
+
+
+
+
 
 <%
     /*the quick way using "="
@@ -28,8 +37,7 @@
     this is to avoid the construction og a new object
      */
 %>
-<%=QuizTestClass.testStringStatic%>
-
+<%//=QuizTestClass.testStringStatic%>
 
 
 

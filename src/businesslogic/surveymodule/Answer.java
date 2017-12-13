@@ -4,7 +4,7 @@
 package businesslogic.surveymodule;
 
 
-import datalayer.DBCore;
+import datalayer.DBCore2;
 
 public class Answer implements InterfaceOption {
 
@@ -16,7 +16,7 @@ public class Answer implements InterfaceOption {
     public Answer(int id, String text) {
         this.id = id;
         this.text = text;
-        if (DBCore.debugDB)System.out.println("Answer object - created");
+        if (DBCore2.debugDB)System.out.println("Answer object - created");
     }
 
 

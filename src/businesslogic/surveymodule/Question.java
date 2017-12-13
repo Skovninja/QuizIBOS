@@ -51,10 +51,21 @@ public class Question implements InterfaceQuestionType{
     @Override
     public String getHTML() {
 
+        /**
+         * This (IF)prevents the variable from beeing generatted each time
+         * this method is called         *
+         * this is good as long at this object does not update it self
+         * after its creation.
+         */
         if (sbHTML.isEmpty()) {
+
+            sbHTML += "<h2>" + title + "</h2>";
+            sbHTML += "<p>" + qText + "</p>";
+
+            //generates the form field in HTML from options
             sbHTML += "<form action='/quiz' method='post'>\n";
             for (InterfaceOption o: options) {
-                sbHTML += "<input name = 'radeoselection' type = 'radio'>" + o.getText() + "<br>\n";
+                sbHTML += "<input name = 'radeoselection' type = 'radio'/>" + o.getText() + "<br>\n";
             }
             sbHTML += "<input type='submit' value='Næste'>\n";
             sbHTML += "</form>";
