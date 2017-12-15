@@ -5,6 +5,13 @@ import businesslogic.surveymodule.Question;
 
 import java.sql.SQLException;
 
+/**
+ * Her er et af eksemplerne på den nedarvede klasse DBCore
+ * Her kan man se at der ikke er særligt meget der skal defineres
+ * herinde i denne sub class.
+ */
+
+
 public class DBQuestion extends DBCore2{
 
 

@@ -6,7 +6,11 @@ import java.util.ArrayList;
 
 /**
  * Created by Ulrik on 23-05-2017.
+ * Denne klasse er er den overordnede som holder styr på Question objekterne somigen holder styr på
+ * Answer objekterne.
+ * Det bliver en herakisk struktur som giver en v is ensartethed, men også en vis fleksibilitet
  */
+
 public class Quiz {
 
     //region --field --

@@ -3,6 +3,15 @@ package datalayer;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * Denne klasse er en abstrakt klasse derved kræves der en nedavning
+ * for at kunne benytte sig af den. fordelen ved dette er at
+ * den kan bruges til flere af de samme operationer, som henter via
+ * en prepared statement med værdien index og returnere et tilfældigt defineret result set
+ * dog skal denne "tilfældighed" specificeres i de nedarvede sub-klasser
+ * som skal håndtere result set og returnere det som en ArrayList
+ */
+
 public abstract class DBCore2 {
 
     //region -- Field --
