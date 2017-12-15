@@ -18,10 +18,6 @@
     <input type="text" name="enteredusername", value="testuser"/><br>
     <input type="password" name="enteredpassword", value="fdsa4321"/><br>
 
-    <% //min checkLoginInDB
-        String test = "<input type=\"radio\">";
-        out.print(test);
-    %>
     <input type="submit" value="Log på">
 
 </form>
